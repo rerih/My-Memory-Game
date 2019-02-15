@@ -1,0 +1,226 @@
+
+/*reset*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    line-height: 1;
+ 
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*end reset*/
+header h1 {
+    font-family: 'Shadows Into Light', cursive;
+    font-weight: bold;
+}
+body {
+    position: relative;
+    margin: 0 auto;
+    padding-top: 10px;
+    width: 963px;
+    box-sizing: border-box;
+    background-image: url('../img/foto.jpg');
+    
+}
+.container {
+    margin: 6px auto;
+    padding: 6px 12px 40px 12px;
+    width: 63%;
+    background-color: sienna;
+    border-radius: 5px;
+    box-shadow: 10px 10px 18px rgba(0, 0, 0, .9);
+}
+#deck {
+    margin: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;    
+}
+.card {
+    margin: 3px;
+    display: flex;
+    width: 137px;
+    height: 137px;
+    border: 1px solid peachpuff;
+    justify-content: center;
+    align-items: center;
+    font-size: 0px;
+    background-color: burlywood;
+    border-radius: 3px; 
+    box-shadow: 4px 6px 8px rgba(0, 0, 0, .75);     
+}
+
+#deck .card.open {
+    animation: opening;
+    animation-duration: .69s;
+    backface-visibility: visible !important;
+    background-color: lightyellow;   
+}
+#deck .card.show {
+    font-size: 36px;   
+}
+
+#deck .card.disable {
+    pointer-events: none;
+}
+
+#deck .card.match {
+    animation: matched;
+    animation-duration: .63s;
+    transition: font-size background-color;
+    transition-delay: 1s;
+    background-color: sandybrown;
+
+}
+#deck .card.unmatch {
+    animation-name: pulse;
+    animation-duration: 0.6s;     
+}
+
+@keyframes opening {
+    from {
+        transform: perspective(333px) rotate3d(0, 1, 0, 90deg);
+        opacity: 0;
+        animation-timing-function: ease-in;
+    }
+    60% {
+        transform: perspective(333px) rotate3d(0, 1, 0, -30deg);    
+    }
+    90% {
+        transform: perspective(333px) rotate3d(0, 1, 0, 23deg);
+        opacity: 1;
+    }
+    96% {
+        transform: perspective(333px) rotate3d(0, 1, 0, -6deg);
+    }
+    to {
+        transform: perspective(333px);
+    }
+}
+
+@keyframes matched {
+    from {
+        transform: scale3d(1, 1, 1);
+    }
+    30% {
+        transform: scale3d(0.96, 1.2, 1);
+    }
+    60% {
+        transform: scale3d(1.2, 0.96, 1);
+    }
+    90% {
+        transform: scale3d(0.96, 1.2, 1);
+    }
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+ }
+
+ @keyframes pulse {
+     from {
+         transform: scale3d(1, 1, 1);
+         
+     }
+     50% {
+         transform: scale3d(1.2, 1.2, 1.2);
+     }
+     to {
+         transform: scale3d(1, 1, 1);    
+    }
+ }
+ 
+ header h1 {
+     text-align: center;
+     font-size: 42px;
+     font-weight: bold;
+     margin: 20px;
+     padding-bottom: 15px 0;
+ }
+ .myScore {
+    text-align: center;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 15px;
+ }
+ .movesD {
+    display: inline;
+    padding: 0 5px 0 10px;
+ }
+ .moves {
+
+ }
+ .timer {
+    display: inline;
+    padding: 15px 0;
+ }
+ .restart {
+    display: inline;
+    padding: 0 10px 0 5px;
+ }
+ .congratulations {
+    display: none;
+    padding-top: 50px;
+    position: absolute;
+    z-index: 1;
+    left: 10% ;
+    top: 10%;
+    width: 90%;
+    height: 42%;
+    background-color: navajowhite;
+    font-family: 'Shadows Into Light', cursive;
+    line-height: 133%;
+    font-size: 40px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 4px 6px 28px rgba(0, 0, 0, 0.418);
+    
+ }
+ #close {
+     width: 20%; 
+     border-radius: 5px;
+     box-shadow: 2px 4px 6px rgba(0, 0, 0, .75);
+     font-family: 'Shadows Into Light', cursive;
+     font-size: 20px;
+     font-weight: bold;
+     background-color: white;
+     margin-top: 80px;
+
+ }
+ #close:hover {
+    transform: translate(-1px, -1px);
+ }
+ 
+ .restart {
+    cursor: pointer;
+ }
+ .restart:hover {
+    color: darkcyan;
+ }
