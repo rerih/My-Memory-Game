@@ -5,4 +5,5 @@ This is simple memory game that tests user memory. During the game the user have
 
 For building this app I was using JavaScript and CSS.
 
-C:\Users\Boris.Jokic\Desktop/memory1.png
+https://github.com/rerih/My-Memory-Game/issues/3#issue-448003057
+
